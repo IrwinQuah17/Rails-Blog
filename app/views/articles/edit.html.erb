@@ -1,5 +1,28 @@
+<style type="text/css">
+.button {
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #d1d3d5;
+  color: #009BDB;
+  text-transform: uppercase;
+  background-color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 120px;
+}
+.button:hover {
+  color: #FFFFFF;
+  background-color: #009BDB;
+}
+
+.big {
+  padding: 23px 45px;
+}
+</style>
+
 <h1>Edit article</h1>
  
 <%= render 'form' %>
  
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', articles_path, class: "big button" %>

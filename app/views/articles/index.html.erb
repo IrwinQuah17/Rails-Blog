@@ -1,22 +1,68 @@
+<style type="text/css">
+  .button {
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #d1d3d5;
+  color: #009BDB;
+  text-transform: uppercase;
+  background-color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 120px;
+}
+.button:hover {
+  color: #FFFFFF;
+  background-color: #009BDB;
+}
+.big {
+  padding: 23px 45px;
+}
+.small {
+  padding: 6px 12px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  margin: 24px auto 0 auto;
+}
+tr {
+  height: 50px;
+  border-bottom: 1px solid #d1d3d5;
+}
+th {
+  text-align: left;
+  background-color: #F0F8FF;
+  padding-left: 12px;
+}
+td {
+  padding-left: 12px;
+}
+
+</style>
+
 <h1>Listing articles</h1>
-<%= link_to 'New article', new_article_path %>
+<img src="http://placekitten.com/g/1500/300">
+
+<%= link_to 'New article', new_article_path, class: "big button" %>
  
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
-    <th></th>
+    <th>Actions</th>
   </tr>
  
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
+      <td><%= link_to 'Show', article_path(article), class: "small button" %></td>
+      <td><%= link_to 'Edit', edit_article_path(article), class: "small button" %></td>
+      <td><%= link_to 'Destroy', article_path(article), 
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } , class: "small button"%></td>
     
     </tr>
   <% end %>

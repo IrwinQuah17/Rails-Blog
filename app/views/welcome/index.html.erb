@@ -1,5 +1,50 @@
+<style type="text/css">
+.button {
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #d1d3d5;
+  color: #009BDB;
+  text-transform: uppercase;
+  background-color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 120px;
+}
+.button:hover {
+  color: #FFFFFF;
+  background-color: #009BDB;
+}
+.big {
+  padding: 23px 45px;
+}
+</style>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2424690704282437',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.12'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <h1>Hello, Rails</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
+<img src="http://placekitten.com/g/1500/300">
+<%= link_to 'My Blog', controller: 'articles', class: "big button" %>
 <div>
   <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
