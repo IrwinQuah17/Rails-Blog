@@ -1,9 +1,42 @@
+<style type="text/css">
+body {
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODM4Nyg5LisBCgoKDQ0NFQ0PFSsZFRktKy0rKysrKy0tKy0rKy0tKystKystKysrKysrKysrLSs4LSsrLS0rKysrKystLTcyK//AABEIAKoBKAMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAAAAQIDBAUH/8QAHRABAQEBAQEAAwEAAAAAAAAAABESAQITAyHhMf/EABkBAQEBAQEBAAAAAAAAAAAAAAABAwQCBf/EABoRAQEBAQEBAQAAAAAAAAAAAAARARICIVH/2gAMAwEAAhEDEQA/APlUCoI+w+ZUwKggUoIqCCVMOHBAqYIqCBUwKhQKUEOBFpQQwCYFEBAwBEqFBSBwgIGAIGEVIUUAgYAiMIqQooBQHAFdAMNGRAwBAwIQMAQMAQMCkIYAoIYBMEUEEwooEKmBQFqSioIFTCi4UFqSVBAqQqEikDIgCMEEwKJFIGYN4IqCNGNTDhwQKUEOHAqYIqCCVMEVBBamFFwQKiCKggVMEVBAqSVBAqQqFEUgcIARgCBgVMEMIFCigFRCi4ILUQKhQWpCoILUmIYOkHBGjAgcECkFQQSpCoIFSFQQhUhUKC0gcESBA4IQIooAmCGEKmFFiC1EKLhQWpghgEhUKCkDgiBEYAgYFTBDAUoDAV0w4qCNWFTBFQQKmHDhwKmFFwQKiCLhQKmCKggVEEXBEKiCKggtRBFwQKiFGneFEKiBUEFqSioIkKmFFQEWphRZC1JRcKBUwovvCiLUwooQKkKggqQqAK64IoNXNUwRQClBFQQKmCKggVMEVBAqIIuFAqYIoQKiCKggtTAqCJBMKKghCphRZQWogi4URaiCKghFqIIqCJCogioILUCKgiFRBFCC1EEVBBamGcAldkEXBGrmqYIqHFhUQ4qHCFRBFwQiVEKLhwi1nBFwQhWcEXBEKiFFwQWogi4O8QqIUXBBazgi4UFqSXCgVJRcKJFqIIuEFTCi4UFqIIqCItRCi4IRaiCKgiFTAqGsK7YIqCNo5amHFQQhUwRUOCVEEXBAqIIuCBUQRUOBWcEXBCLWcEaQokKiFGkKEWohRcESFRCi4USLUQRcEFrOFGkKC1EKNIURaiFFwoFTCi4UFqIIuFEWogVBAqYaoArugi4I2jkqYIuDKlRDi8nkKzgjTIyFZwRcGQrOCNMjIVnCjTJRCogi4IFRCi4IkWohRpBCFZQo1hZFrOFGmSiLWcKNIUFqIIqCJFqIIqCJFqIUXCgtRCjSF3iLUQRUECpgXAFehzyeWvPCstawzGOT54bZGUr1yxyJxt3wPn/VeZrA23zHzX4nPpj+h+m3zHzRZrLP6pd43yMJV3y55wo6O+BhanOueFHRgu/jKnOsIWW/Pxj5ouZrDJZdHzGCvXLmyUdPfCe+CpzrCFG+C+fCnOsO8THR38ae+AmsII174LCL9ZQRpkshWcKNO8KBWcEXBEWs4IuCJFqIFwLCvXyfPLRXBYzyMNQLGWDw1ARngYagpGWBhoZSMsDDUCxlgsNiEmMsFhsQRjkstgUjHJZbEhGOS75bF0WMu+U98tukUY98p75dHU9HmOfvlOXR0lqcsO+U98ulPeFXjf1z5HfHW8T0pnlh3wXfDbpeinLDAw1L0VNxngNef4BeX//Z);
+  background-size: cover;
+}
+
+h2 {
+  color: white;
+}
+
+.box {
+  border: 3px solid black;
+  background-color: #F5F5F5;
+}
+
+.field {
+  margin: auto;
+  width: 300px;
+  background-color: #F5F5F5;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.actions {
+  width: 40%;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-bottom: 24px;
+}
+</style>
+
 <h2>Sign up</h2>
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+<div class="box">
   <div class="field">
   <%= f.label :first_name %><br />
   <%= f.text_field :first_name%>
@@ -35,6 +68,7 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>

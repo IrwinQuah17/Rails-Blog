@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_scope :user do
+    post "sessions/user", to: "devise/sessions#create"
+  end
   get 'home/show'
   get 'sessions/create'
   get 'sessions/destroy'
-  	get 'welcome/index'
-	  
+  get 'welcome/index'
   	resources :articles
 	  
   	root 'welcome#index'

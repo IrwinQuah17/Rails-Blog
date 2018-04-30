@@ -1,4 +1,9 @@
 <style type="text/css">
+body {
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODM4Nyg5LisBCgoKDQ0NFQ0PFSsZFRktKy0rKysrKy0tKy0rKy0tKystKystKysrKysrKysrLSs4LSsrLS0rKysrKystLTcyK//AABEIAKoBKAMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAAAAQIDBAUH/8QAHRABAQEBAQEAAwEAAAAAAAAAABESAQITAyHhMf/EABkBAQEBAQEBAAAAAAAAAAAAAAABAwQCBf/EABoRAQEBAQEBAQAAAAAAAAAAAAARARICIVH/2gAMAwEAAhEDEQA/APlUCoI+w+ZUwKggUoIqCCVMOHBAqYIqCBUwKhQKUEOBFpQQwCYFEBAwBEqFBSBwgIGAIGEVIUUAgYAiMIqQooBQHAFdAMNGRAwBAwIQMAQMAQMCkIYAoIYBMEUEEwooEKmBQFqSioIFTCi4UFqSVBAqQqEikDIgCMEEwKJFIGYN4IqCNGNTDhwQKUEOHAqYIqCCVMEVBBamFFwQKiCKggVMEVBAqSVBAqQqFEUgcIARgCBgVMEMIFCigFRCi4ILUQKhQWpCoILUmIYOkHBGjAgcECkFQQSpCoIFSFQQhUhUKC0gcESBA4IQIooAmCGEKmFFiC1EKLhQWpghgEhUKCkDgiBEYAgYFTBDAUoDAV0w4qCNWFTBFQQKmHDhwKmFFwQKiCLhQKmCKggVEEXBEKiCKggtRBFwQKiFGneFEKiBUEFqSioIkKmFFQEWphRZC1JRcKBUwovvCiLUwooQKkKggqQqAK64IoNXNUwRQClBFQQKmCKggVMEVBAqIIuFAqYIoQKiCKggtTAqCJBMKKghCphRZQWogi4URaiCKghFqIIqCJCogioILUCKgiFRBFCC1EEVBBamGcAldkEXBGrmqYIqHFhUQ4qHCFRBFwQiVEKLhwi1nBFwQhWcEXBEKiFFwQWogi4O8QqIUXBBazgi4UFqSXCgVJRcKJFqIIuEFTCi4UFqIIqCItRCi4IRaiCKgiFTAqGsK7YIqCNo5amHFQQhUwRUOCVEEXBAqIIuCBUQRUOBWcEXBCLWcEaQokKiFGkKEWohRcESFRCi4USLUQRcEFrOFGkKC1EKNIURaiFFwoFTCi4UFqIIuFEWogVBAqYaoArugi4I2jkqYIuDKlRDi8nkKzgjTIyFZwRcGQrOCNMjIVnCjTJRCogi4IFRCi4IkWohRpBCFZQo1hZFrOFGmSiLWcKNIUFqIIqCJFqIIqCJFqIUXCgtRCjSF3iLUQRUECpgXAFehzyeWvPCstawzGOT54bZGUr1yxyJxt3wPn/VeZrA23zHzX4nPpj+h+m3zHzRZrLP6pd43yMJV3y55wo6O+BhanOueFHRgu/jKnOsIWW/Pxj5ouZrDJZdHzGCvXLmyUdPfCe+CpzrCFG+C+fCnOsO8THR38ae+AmsII174LCL9ZQRpkshWcKNO8KBWcEXBEWs4IuCJFqIFwLCvXyfPLRXBYzyMNQLGWDw1ARngYagpGWBhoZSMsDDUCxlgsNiEmMsFhsQRjkstgUjHJZbEhGOS75bF0WMu+U98tukUY98p75dHU9HmOfvlOXR0lqcsO+U98ulPeFXjf1z5HfHW8T0pnlh3wXfDbpeinLDAw1L0VNxngNef4BeX//Z);
+  background-size: cover;
+}
+
 .container {
   background-color: #F5F5F5;
   padding: 24px;
@@ -26,15 +31,37 @@
 .small {
   padding: 6px 12px;
 }
+
+h1,
+h2 {
+  background-color: #2A4550;
+  color: white;
+  margin: 0;
+  padding: 24px;
+
+}
+
+.text_area {
+  background-color: black;
+  height: 6rem;
+  width: 30rem;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.show {
+  font-size: 40px;
+}
+
 </style>
 
 <div class="container">
-  <p>
+  <p class="show">
     <strong>Title:</strong>
     <%= @article.title %>
   </p>
    
-  <p>
+  <p class="show">
     <strong>Text:</strong>
     <%= @article.text %>
   </p>
@@ -46,11 +73,11 @@
   <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
     <p>
       <%= form.label :commenter %><br>
-      <%= form.text_field :commenter %>
+      <%= form.text_field :commenter, class: "text_area" %>
     </p>
     <p>
       <%= form.label :body %><br>
-      <%= form.text_area :body %>
+      <%= form.text_area :body, class: "text_area" %>
     </p>
     <p>
       <%= form.submit %>

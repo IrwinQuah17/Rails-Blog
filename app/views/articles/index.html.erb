@@ -1,5 +1,5 @@
 <style type="text/css">
-  .button {
+.button {
   text-decoration: none;
   border-radius: 4px;
   border: 1px solid #d1d3d5;
@@ -40,6 +40,13 @@ td {
   padding-left: 12px;
 }
 
+.Home {
+  color: black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+}
+
+
 </style>
 
 <h1>Listing articles</h1>
@@ -63,7 +70,11 @@ td {
       <td><%= link_to 'Destroy', article_path(article), 
               method: :delete,
               data: { confirm: 'Are you sure?' } , class: "small button"%></td>
-    
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Home', "https://650ee706.ngrok.io/", class: "Home" %>
+
+
+
